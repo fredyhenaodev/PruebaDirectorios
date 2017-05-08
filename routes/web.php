@@ -11,6 +11,16 @@
 |
 */
 
-Route::get('/', function () {
+/*Route::get('/', function () {
     return view('welcome');
+});*/
+//Route::get('/', 'AdminController@index');
+/*Route::get('/', 'UsuariosController@index');
+Route::get('usuarios/create', 'UsuariosController@create');
+Route::resource('usuarios', 'UsuariosController');
+*/
+Route::group(['middleware' => ['web']], function () {
+    Route::resource('/', 'UsuariosController', ['only' => ['index', 'show']]);
+    Route::resource('usuarios', 'UsuariosController');
+    Route::get('create', 'UsuariosController@create');
 });

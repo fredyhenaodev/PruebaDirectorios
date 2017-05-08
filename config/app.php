@@ -64,7 +64,7 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
+    'timezone' => 'America/Bogota',
 
     /*
     |--------------------------------------------------------------------------
@@ -77,7 +77,7 @@ return [
     |
     */
 
-    'locale' => 'en',
+    'locale' => 'es',
 
     /*
     |--------------------------------------------------------------------------
@@ -171,11 +171,14 @@ return [
         /*
          * Application Service Providers...
          */
-        App\Providers\AppServiceProvider::class,
-        App\Providers\AuthServiceProvider::class,
-        // App\Providers\BroadcastServiceProvider::class,
-        App\Providers\EventServiceProvider::class,
-        App\Providers\RouteServiceProvider::class,
+        Directorio\Providers\AppServiceProvider::class,
+        Directorio\Providers\AuthServiceProvider::class,
+        // Directorio\Providers\BroadcastServiceProvider::class,
+        Directorio\Providers\EventServiceProvider::class,
+        Directorio\Providers\RouteServiceProvider::class,
+
+        //StydeNet Html package
+        Styde\Html\HtmlServiceProvider::class,
 
     ],
 
@@ -226,6 +229,8 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
 
+        //StydeNet Html package
+        'Access' => Styde\Html\Facades\Access::class,
     ],
 
 ];
